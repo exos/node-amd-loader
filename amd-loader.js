@@ -76,7 +76,7 @@ global.define = function (id, injects, factory) {
         return mod.exports = factory;
     }
     
-    var returned = factory.apply(mod.exports, injects.map(function (injection) {
+    var returned = factory.apply({}, injects.map(function (injection) {
         switch (injection) {
             // check for CommonJS injection variables
             case "require": return req;
