@@ -68,8 +68,6 @@ global.define = function (id, injects, factory) {
             return require(fileName);
     }.bind(this, mod);
 
-    injects.unshift("require", "exports", "module");
-    
     id = mod.id;
     if (typeof factory !== "function") {
         // we can just provide a plain object
